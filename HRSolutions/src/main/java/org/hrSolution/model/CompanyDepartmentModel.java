@@ -14,10 +14,10 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class CompanyDepartmentModel {
 
 	/**
-	 * Company Name
+	 * Company ID
 	 */
-	@JsonProperty("cName")
-	private String companyName;
+	@JsonProperty("cId")
+	private String companyID;
 
 	/**
 	 * Company Department ID
@@ -35,7 +35,7 @@ public class CompanyDepartmentModel {
 	 * Parameterized Constructor
 	 */
 	public CompanyDepartmentModel(CompanyDepartmentModelBuilder companyDeptModelbuilder) {
-		this.companyName = companyDeptModelbuilder.companyName;
+		this.companyID = companyDeptModelbuilder.companyID;
 		this.companyDepartmentName = companyDeptModelbuilder.companyDepartmentName;
 		this.companyDepartmentId = companyDeptModelbuilder.companyDepartmentId;
 	}
@@ -55,10 +55,10 @@ public class CompanyDepartmentModel {
 	}
 
 	/**
-	 * Getting Company NAME
+	 * Getting Company ID
 	 */
-	public String getCompanyName() {
-		return companyName;
+	public String getcompanyID() {
+		return companyID;
 	}
 	
 	/**
@@ -67,10 +67,10 @@ public class CompanyDepartmentModel {
 	public static class CompanyDepartmentModelBuilder {
 
 		/**
-		 * Company Name
+		 * Company ID
 		 */
-		@JsonProperty("cName")
-		private String companyName;
+		@JsonProperty("cId")
+		private String companyID;
 
 		/**
 		 * Company Department ID
@@ -87,8 +87,8 @@ public class CompanyDepartmentModel {
 		/**
 		 * Setting Company NAME
 		 */
-		public CompanyDepartmentModelBuilder companyName(String companyName) {
-			this.companyName = companyName;
+		public CompanyDepartmentModelBuilder companyID(String companyID) {
+			this.companyID = companyID;
 			return this;
 		}
 

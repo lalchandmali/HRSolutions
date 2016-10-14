@@ -14,16 +14,16 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class CompanyRoleModel {
 	
 	/**
-	 * Company Department ID
+	 * Role ID of employee @generated
 	 */
-	@JsonProperty("cDId")
-	private String companyDepartmentId;
+	@JsonProperty("rId")
+	private String roleId;
 
 	/**
-	 * Company Department NAME
+	 * Role NAME of employee e.g. manager,sr. manager
 	 */
-	@JsonProperty("cDName")
-	private String companyDepartmentName;
+	@JsonProperty("rName")
+	private String roleName;
 
 	/**
 	 * Department Access Rights
@@ -35,23 +35,23 @@ public class CompanyRoleModel {
 	 * Parameterized Constructor
 	 */
 	public CompanyRoleModel(CompanyRoleModelBuilder companyRoleModelBuilder) {
-		this.companyDepartmentId = companyRoleModelBuilder.companyDepartmentId;
-		this.companyDepartmentName = companyRoleModelBuilder.companyDepartmentName;
+		this.roleId = companyRoleModelBuilder.roleId;
+		this.roleName = companyRoleModelBuilder.roleName;
 		this.departmentAccessRights = companyRoleModelBuilder.departmentAccessRights;
 	}
 
 	/**
-	 * Getting Company Department ID
+	 * Getting Role ID of employee
 	 */
-	public String getCompanyDepartmentId() {
-		return companyDepartmentId;
+	public String getRoleId() {
+		return roleId;
 	}
 
 	/**
-	 * Getting Company Department NAME
+	 * Getting Role NAME of employee
 	 */
-	public String getCompanyDepartmentName() {
-		return companyDepartmentName;
+	public String getRoleName() {
+		return roleName;
 	}
 
 	/**
@@ -67,16 +67,16 @@ public class CompanyRoleModel {
 	public static class CompanyRoleModelBuilder {
 
 		/**
-		 * Company Department ID
+		 * Role ID of employee
 		 */
-		@JsonProperty("cDId")
-		private String companyDepartmentId;
+		@JsonProperty("rId")
+		private String roleId;
 
 		/**
-		 * Company Department NAME
+		 * Role NAME of employee
 		 */
-		@JsonProperty("cDName")
-		private String companyDepartmentName;
+		@JsonProperty("rName")
+		private String roleName;
 
 		/**
 		 * Department Access Rights
@@ -85,18 +85,18 @@ public class CompanyRoleModel {
 		private String departmentAccessRights;
 
 		/**
-		 * Setting Company Department ID
+		 * Setting Role ID of employee
 		 */
-		public CompanyRoleModelBuilder setCompanyDeptId(String companyDepartmentId) {
-			this.companyDepartmentId = companyDepartmentId;
+		public CompanyRoleModelBuilder setRoleId(String roleId) {
+			this.roleId = roleId;
 			return this;
 		}
 
 		/**
-		 * Setting Company Department NAME
+		 * Setting Role NAME of employee
 		 */
-		public CompanyRoleModelBuilder setCompanyDeptName(String companyDepartmentName) {
-			this.companyDepartmentName = companyDepartmentName;
+		public CompanyRoleModelBuilder setRoleName(String roleName) {
+			this.roleName = roleName;
 			return this;
 		}
 
