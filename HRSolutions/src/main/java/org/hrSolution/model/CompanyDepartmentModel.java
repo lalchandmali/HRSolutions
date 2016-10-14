@@ -34,10 +34,10 @@ public class CompanyDepartmentModel {
 	/**
 	 * Parameterized Constructor
 	 */
-	public CompanyDepartmentModel(CompanyDepartmentModelBuilder companyDeptModelbuilder) {
-		this.companyID = companyDeptModelbuilder.companyID;
-		this.companyDepartmentName = companyDeptModelbuilder.companyDepartmentName;
-		this.companyDepartmentId = companyDeptModelbuilder.companyDepartmentId;
+	public CompanyDepartmentModel(CompanyDepartmentBuilder companyDeptbuilder) {
+		this.companyID = companyDeptbuilder.companyID;
+		this.companyDepartmentName = companyDeptbuilder.companyDepartmentName;
+		this.companyDepartmentId = companyDeptbuilder.companyDepartmentId;
 	}
 
 	/**
@@ -62,9 +62,9 @@ public class CompanyDepartmentModel {
 	}
 	
 	/**
-	 * Builder class for CompanyRoleModel
+	 * Builder class for CompanyDepartmentModel
 	 */
-	public static class CompanyDepartmentModelBuilder {
+	public static class CompanyDepartmentBuilder {
 
 		/**
 		 * Company ID
@@ -87,7 +87,7 @@ public class CompanyDepartmentModel {
 		/**
 		 * Setting Company NAME
 		 */
-		public CompanyDepartmentModelBuilder companyID(String companyID) {
+		public CompanyDepartmentBuilder companyID(String companyID) {
 			this.companyID = companyID;
 			return this;
 		}
@@ -95,7 +95,7 @@ public class CompanyDepartmentModel {
 		/**
 		 * Setting Company Department ID
 		 */
-		public CompanyDepartmentModelBuilder companyDepartmentId(String companyDepartmentId) {
+		public CompanyDepartmentBuilder companyDepartmentId(String companyDepartmentId) {
 			this.companyDepartmentId = companyDepartmentId;
 			return this;
 		}
@@ -103,7 +103,7 @@ public class CompanyDepartmentModel {
 		/**
 		 * Setting Company Department NAME
 		 */
-		public CompanyDepartmentModelBuilder companyDepartmentName(String companyDepartmentName) {
+		public CompanyDepartmentBuilder companyDepartmentName(String companyDepartmentName) {
 			this.companyDepartmentName = companyDepartmentName;
 			return this;
 		}

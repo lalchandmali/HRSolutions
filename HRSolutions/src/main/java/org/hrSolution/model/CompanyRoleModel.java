@@ -34,10 +34,10 @@ public class CompanyRoleModel {
 	/**
 	 * Parameterized Constructor
 	 */
-	public CompanyRoleModel(CompanyRoleModelBuilder companyRoleModelBuilder) {
-		this.roleId = companyRoleModelBuilder.roleId;
-		this.roleName = companyRoleModelBuilder.roleName;
-		this.accessRights = companyRoleModelBuilder.accessRights;
+	public CompanyRoleModel(CompanyRoleBuilder companyRoleBuilder) {
+		this.roleId = companyRoleBuilder.roleId;
+		this.roleName = companyRoleBuilder.roleName;
+		this.accessRights = companyRoleBuilder.accessRights;
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class CompanyRoleModel {
 	/**
 	 * Builder class for CompanyRoleModel
 	 */
-	public static class CompanyRoleModelBuilder {
+	public static class CompanyRoleBuilder {
 
 		/**
 		 * Role ID of employee
@@ -87,7 +87,7 @@ public class CompanyRoleModel {
 		/**
 		 * Setting Role ID of employee
 		 */
-		public CompanyRoleModelBuilder setRoleId(String roleId) {
+		public CompanyRoleBuilder roleId(String roleId) {
 			this.roleId = roleId;
 			return this;
 		}
@@ -95,7 +95,7 @@ public class CompanyRoleModel {
 		/**
 		 * Setting Role NAME of employee
 		 */
-		public CompanyRoleModelBuilder setRoleName(String roleName) {
+		public CompanyRoleBuilder roleName(String roleName) {
 			this.roleName = roleName;
 			return this;
 		}
@@ -103,7 +103,7 @@ public class CompanyRoleModel {
 		/**
 		 * Setting Access Rights
 		 */
-		public CompanyRoleModelBuilder setAccessRight(String accessRights) {
+		public CompanyRoleBuilder accessRight(String accessRights) {
 			this.accessRights = accessRights;
 			return this;
 		}
