@@ -2,27 +2,56 @@ package org.hrSolution.model;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
+/*This model class is used for setting and getting variable for
+ * Employee means Employee is already member of company
+ * */
+/**
+ * @author lalchand Mali
+ *
+ */
 public class EmployeeRegistrationModel {
 
 	/* class attributes declarations */
+	/*
+	 * Employee Id variable declaration
+	 */
 	@JsonProperty("eid")
 	private String employeeId;
 
+	/*
+	 * Employee name variable declaration
+	 */
 	@JsonProperty("ename")
 	private String employeeName;
 
+	/*
+	 * Employee roleId (e.g. HR, Senior Manager,Manager,Lead) variable
+	 * declaration
+	 */
 	@JsonProperty("rid")
 	private Integer roleId;
 
+	/*
+	 * Employee department Id variable declaration
+	 */
 	@JsonProperty("did")
 	private Integer departmentId;
 
+	/*
+	 * Employee Company Id variable declaration
+	 */
 	@JsonProperty("cid")
 	private String companyId;
 
+	/*
+	 * Employee Mail Id variable declaration
+	 */
 	@JsonProperty("mid")
 	private String mailId;
 
+	/*
+	 * Employee Password variable declaration
+	 */
 	@JsonProperty("pwd")
 	private String password;
 
@@ -78,24 +107,46 @@ public class EmployeeRegistrationModel {
 	/* EmployeeRegistrationBuilder class for building the result */
 	public static class EmployeeRegistrationBuilder {
 		/* class attributes declarations */
+		/*
+		 * Employee Id variable declaration
+		 */
 		@JsonProperty("eid")
 		private String employeeId;
 
+		/*
+		 * Employee name variable declaration
+		 */
 		@JsonProperty("ename")
 		private String employeeName;
 
+		/*
+		 * Employee roleId (e.g. HR, Senior Manager,Manager,Lead) variable
+		 * declaration
+		 */
 		@JsonProperty("rid")
 		private Integer roleId;
 
+		/*
+		 * Employee department Id variable declaration
+		 */
 		@JsonProperty("did")
 		private Integer departmentId;
 
+		/*
+		 * Employee Company Id variable declaration
+		 */
 		@JsonProperty("cid")
 		private String companyId;
 
+		/*
+		 * Employee Mail Id variable declaration
+		 */
 		@JsonProperty("mid")
 		private String mailId;
 
+		/*
+		 * Employee Password variable declaration
+		 */
 		@JsonProperty("pwd")
 		private String password;
 

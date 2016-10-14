@@ -3,20 +3,39 @@ package org.hrSolution.model;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 /*This model class is used for setting and getting variable for
- * preEmployment
+ * preEmployment means Employee has not joined the company
  * */
+/**
+ * @author lalchand mali
+ *
+ */
 public class PreEmployeeRegistrationModel {
-	/* class attributes declaration */
-	@JsonProperty("ename")
+	/*
+	 * class attributes declaration
+	 */
+
+	/*
+	 * preEmployee name variable declaration
+	 */
+	@JsonProperty("pname")
 	private String preEmpName;
 
-	@JsonProperty("email")
+	/*
+	 * preEmployee Mail variable declaration
+	 */
+	@JsonProperty("pmail")
 	private String preEmpMail;
 
-	@JsonProperty("ephone")
+	/*
+	 * preEmployee Phone variable declaration
+	 */
+	@JsonProperty("pphone")
 	private String preEmpPhone;
 
-	@JsonProperty("epass")
+	/*
+	 * preEmployee Password variable declaration
+	 */
+	@JsonProperty("ppass")
 	private String preEmpPassword;
 
 	/* Parameterized constructor for setting attributes values */
@@ -49,17 +68,32 @@ public class PreEmployeeRegistrationModel {
 
 	/* EmployeeRegistrationBuilder class for building the result */
 	public static class PreEmployeeRegistrationBuilder {
-		/* class attributes declarations */
-		@JsonProperty("ename")
+		/*
+		 * class attributes declaration
+		 */
+
+		/*
+		 * preEmployee name variable declaration
+		 */
+		@JsonProperty("pname")
 		private String preEmpName;
 
-		@JsonProperty("email")
+		/*
+		 * preEmployee Mail variable declaration
+		 */
+		@JsonProperty("pmail")
 		private String preEmpMail;
 
-		@JsonProperty("ephone")
+		/*
+		 * preEmployee Phone variable declaration
+		 */
+		@JsonProperty("pphone")
 		private String preEmpPhone;
 
-		@JsonProperty("epass")
+		/*
+		 * preEmployee Password variable declaration
+		 */
+		@JsonProperty("ppass")
 		private String preEmpPassword;
 
 		/* Setting Employee name by Builder */
