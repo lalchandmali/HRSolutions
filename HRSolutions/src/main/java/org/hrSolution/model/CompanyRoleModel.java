@@ -26,10 +26,10 @@ public class CompanyRoleModel {
 	private String roleName;
 
 	/**
-	 * Department Access Rights
+	 *  Access Rights
 	 */
-	@JsonProperty("dARights")
-	private String departmentAccessRights;
+	@JsonProperty("aRights")
+	private String accessRights;
 
 	/**
 	 * Parameterized Constructor
@@ -37,7 +37,7 @@ public class CompanyRoleModel {
 	public CompanyRoleModel(CompanyRoleModelBuilder companyRoleModelBuilder) {
 		this.roleId = companyRoleModelBuilder.roleId;
 		this.roleName = companyRoleModelBuilder.roleName;
-		this.departmentAccessRights = companyRoleModelBuilder.departmentAccessRights;
+		this.accessRights = companyRoleModelBuilder.accessRights;
 	}
 
 	/**
@@ -55,10 +55,10 @@ public class CompanyRoleModel {
 	}
 
 	/**
-	 * Getting Department Access Rights
+	 * Getting Access Rights
 	 */
-	public String getDepartmentAccessRights() {
-		return departmentAccessRights;
+	public String getAccessRights() {
+		return accessRights;
 	}
 
 	/**
@@ -81,8 +81,8 @@ public class CompanyRoleModel {
 		/**
 		 * Department Access Rights
 		 */
-		@JsonProperty("dARights")
-		private String departmentAccessRights;
+		@JsonProperty("aRights")
+		private String accessRights;
 
 		/**
 		 * Setting Role ID of employee
@@ -101,10 +101,10 @@ public class CompanyRoleModel {
 		}
 
 		/**
-		 * Setting Department Access Rights
+		 * Setting Access Rights
 		 */
-		public CompanyRoleModelBuilder setDeptAccessRight(String departmentAccessRights) {
-			this.departmentAccessRights = departmentAccessRights;
+		public CompanyRoleModelBuilder setAccessRight(String accessRights) {
+			this.accessRights = accessRights;
 			return this;
 		}
 
