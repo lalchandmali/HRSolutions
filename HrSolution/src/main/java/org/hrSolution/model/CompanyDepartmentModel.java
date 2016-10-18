@@ -1,6 +1,14 @@
 package org.hrSolution.model;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
 
 /**
  *  This class used for getter setter of Company Department with having
@@ -11,25 +19,40 @@ import org.codehaus.jackson.annotate.JsonProperty;
  *  @since   14-10-2016 
  */
 
-public class CompanyDepartmentModel {
+@Entity
+@Table(name = "DEPARTMENT")
+public class CompanyDepartmentModel implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Company ID
 	 */
-	@JsonProperty("cId")
-	private String companyID;
+	@Id
+	@JsonProperty("cid")
+	private Integer companyID;
 
 	/**
 	 * Company Department ID
 	 */
-	@JsonProperty("cDId")
-	private String companyDepartmentId;
+	@Id
+	@JsonProperty("did")
+	private Integer companyDepartmentId;
 
 	/**
 	 * Company Department Name
 	 */
-	@JsonProperty("cDName")
+	@JsonProperty("cdname")
 	private String companyDepartmentName;
+
+
+	public CompanyDepartmentModel() {
+		super();
+		// TODO Auto-generated constructor stub
+	}	
 
 	/**
 	 * Parameterized Constructor
@@ -43,7 +66,7 @@ public class CompanyDepartmentModel {
 	/**
 	 * Getting Company Department ID
 	 */
-	public String getCompanyDepartmentId() {
+	public Integer getCompanyDepartmentId() {
 		return companyDepartmentId;
 	}
 
@@ -57,7 +80,7 @@ public class CompanyDepartmentModel {
 	/**
 	 * Getting Company ID
 	 */
-	public String getcompanyID() {
+	public Integer getcompanyID() {
 		return companyID;
 	}
 	
@@ -69,25 +92,25 @@ public class CompanyDepartmentModel {
 		/**
 		 * Company ID
 		 */
-		@JsonProperty("cId")
-		private String companyID;
+		@JsonProperty("cid")
+		private Integer companyID;
 
 		/**
 		 * Company Department ID
 		 */
-		@JsonProperty("cDId")
-		private String companyDepartmentId;
+		@JsonProperty("did")
+		private Integer companyDepartmentId;
 
 		/**
 		 * Company Department Name
 		 */
-		@JsonProperty("cDName")
+		@JsonProperty("cdname")
 		private String companyDepartmentName;
 
 		/**
 		 * Setting Company NAME
 		 */
-		public CompanyDepartmentBuilder companyID(String companyID) {
+		public CompanyDepartmentBuilder companyID(Integer companyID) {
 			this.companyID = companyID;
 			return this;
 		}
@@ -95,7 +118,7 @@ public class CompanyDepartmentModel {
 		/**
 		 * Setting Company Department ID
 		 */
-		public CompanyDepartmentBuilder companyDepartmentId(String companyDepartmentId) {
+		public CompanyDepartmentBuilder companyDepartmentId(Integer companyDepartmentId) {
 			this.companyDepartmentId = companyDepartmentId;
 			return this;
 		}

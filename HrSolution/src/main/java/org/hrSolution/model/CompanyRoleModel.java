@@ -1,6 +1,12 @@
 package org.hrSolution.model;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
 
 /**
  *  This class used for getter setter of Company Role with access
@@ -11,29 +17,38 @@ import org.codehaus.jackson.annotate.JsonProperty;
  *  @since   14-10-2016 
  */
 
+@Entity
+@Table(name = "ROLE")
 public class CompanyRoleModel {
 	
 	/**
 	 * Role ID of employee @generated
 	 */
-	@JsonProperty("rId")
-	private String roleId;
+	@Id
+	@JsonProperty("rid")
+	private Integer roleId;
 
 	/**
 	 * Role NAME of employee e.g. manager,sr. manager
 	 */
-	@JsonProperty("rName")
+	@JsonProperty("rname")
 	private String roleName;
 
 	/**
 	 *  Access Rights
 	 */
-	@JsonProperty("aRights")
+	@JsonProperty("rights")
 	private String accessRights;
 
 	/**
 	 * Parameterized Constructor
 	 */
+
+	
+	public CompanyRoleModel () {
+		super();
+	}
+
 	public CompanyRoleModel(CompanyRoleBuilder companyRoleBuilder) {
 		this.roleId = companyRoleBuilder.roleId;
 		this.roleName = companyRoleBuilder.roleName;
@@ -43,7 +58,7 @@ public class CompanyRoleModel {
 	/**
 	 * Getting Role ID of employee
 	 */
-	public String getRoleId() {
+	public Integer getRoleId() {
 		return roleId;
 	}
 
@@ -69,25 +84,25 @@ public class CompanyRoleModel {
 		/**
 		 * Role ID of employee
 		 */
-		@JsonProperty("rId")
-		private String roleId;
+		@JsonProperty("rid")
+		private Integer roleId;
 
 		/**
 		 * Role NAME of employee
 		 */
-		@JsonProperty("rName")
+		@JsonProperty("rname")
 		private String roleName;
 
 		/**
 		 * Department Access Rights
 		 */
-		@JsonProperty("aRights")
+		@JsonProperty("rights")
 		private String accessRights;
 
 		/**
 		 * Setting Role ID of employee
 		 */
-		public CompanyRoleBuilder roleId(String roleId) {
+		public CompanyRoleBuilder roleId(Integer roleId) {
 			this.roleId = roleId;
 			return this;
 		}
