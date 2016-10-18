@@ -12,21 +12,25 @@ import org.springframework.context.MessageSource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class EmployeeRegisterController {
-	private static final Logger logger = LoggerFactory.getLogger(EmployeeRegisterController.class);
+	private static final Logger logger = LoggerFactory
+			.getLogger(EmployeeRegisterController.class);
 
 	@Autowired
 	EmployeeRegisterService employeeRegisterService;
-	
-	@Autowired
-    MessageSource messageSource;
 
-	@RequestMapping(value = { "/register" } , produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
-	public ResponseEntity<Object> employeeRegister(EmployeeRegistrationModel employeeRegistrationModel) {
+	@Autowired
+	MessageSource messageSource;
+
+	@RequestMapping(value = "/register", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Object> employeeRegister(
+			@RequestBody EmployeeRegistrationModel employeeRegistrationModel) {
 
 		/**
 		 * ResponseEntity object for returning response back to client
@@ -47,14 +51,16 @@ public class EmployeeRegisterController {
 		 * registered successfully then it will return true otherwise it will
 		 * return false
 		 **/
-		Boolean status = employeeRegisterService.register(employeeRegistrationModel);
+		Boolean status = employeeRegisterService
+				.register(employeeRegistrationModel);
 
 		/**
 		 * creating ResponseEntity class object for returning
 		 */
 		if (status) {
 			message = StatusCode.RESOURCE_CREATED;
-			response = EntityCreatedResponse.entityCreatedResponseBuilder(message);
+			response = EntityCreatedResponse
+					.entityCreatedResponseBuilder(message);
 		} else {
 			message = StatusCode.RESOURCE_NOT_CREATED;
 			response = EntityCreationFailed.entityCreationFailed(message);

@@ -9,28 +9,30 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.hrSolution")
-public class AppConfig extends WebMvcConfigurerAdapter{
+/**
+ * This class is used for configuration of resources and view Resolver
+ * 
+ * */
+public class AppConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/**")
-                        .addResourceLocations("/resources/");
+		registry.addResourceHandler("/resources/**").addResourceLocations(
+				"/resources/");
 	}
 	/**
 	 * This method is used when we are returning jsp pages from controller
 	 * */
-	/*@Bean
-	public ViewResolver viewResolver() {
-		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setViewClass(JstlView.class);
-		viewResolver.setSuffix(".jsp");
-		return viewResolver;
-	}*/
+	/*
+	 * @Bean public ViewResolver viewResolver() { InternalResourceViewResolver
+	 * viewResolver = new InternalResourceViewResolver();
+	 * viewResolver.setViewClass(JstlView.class);
+	 * viewResolver.setSuffix(".jsp"); return viewResolver; }
+	 */
 
-	/*@Bean
-	public MessageSource messageSource() {
-		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-		messageSource.setBasename("messages");
-		return messageSource;
-	}*/
+	/*
+	 * @Bean public MessageSource messageSource() { ResourceBundleMessageSource
+	 * messageSource = new ResourceBundleMessageSource();
+	 * messageSource.setBasename("messages"); return messageSource; }
+	 */
 }

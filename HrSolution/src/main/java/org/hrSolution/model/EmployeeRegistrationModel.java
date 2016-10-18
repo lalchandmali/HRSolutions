@@ -4,14 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * This model class is used for setting and getting variable for
  * Employee means Employee is already member of company
  * */
 /**
- * @author lalchand Mali
+ * @author Lalchand Mali
  *
  */
 @Entity
@@ -64,8 +64,6 @@ public class EmployeeRegistrationModel {
 	 */
 	@JsonProperty("pwd")
 	private String password;
-	
-	
 
 	public EmployeeRegistrationModel() {
 		super();

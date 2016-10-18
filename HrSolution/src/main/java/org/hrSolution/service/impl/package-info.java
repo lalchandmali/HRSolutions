@@ -5,4 +5,4 @@
  * @author lalchand
  *
  */
-package org.hrSolution.impl;
+package org.hrSolution.service.impl;
