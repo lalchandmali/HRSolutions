@@ -26,6 +26,7 @@ public class CompanyRegistrationController {
 
 	@RequestMapping(value = {
 			"/company/register" }, produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
+
 	public ResponseEntity<Object> companyRegistration(@RequestBody CompanyRegistrationModel companyRegistrationModel) {
 
 		/**
@@ -49,6 +50,7 @@ public class CompanyRegistrationController {
 		 * registered successfully then it will return true otherwise it will
 		 * return false
 		 **/
+
 		Boolean status = companyRegistrationService.registerCompany(companyRegistrationModel, companyAddress);
 
 		/**
@@ -66,5 +68,4 @@ public class CompanyRegistrationController {
 		return response;
 
 	}
-
 }
