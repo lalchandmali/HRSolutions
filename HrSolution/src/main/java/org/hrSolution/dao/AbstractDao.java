@@ -8,18 +8,24 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * The DAO uses the Hibernate API directly, without relying on any Spring
+ * templates (such as HibernateTemplate). Using of templates, as well as
+ * management of the SessionFactory which is autowired in the DAO
+ * */
 public abstract class AbstractDao<PK extends Serializable, T> {
 	private final Class<T> persistentClass;
 
 	@SuppressWarnings("unchecked")
-	public AbstractDao(){
-		this.persistentClass =(Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[1];
+	public AbstractDao() {
+		this.persistentClass = (Class<T>) ((ParameterizedType) this.getClass()
+				.getGenericSuperclass()).getActualTypeArguments()[1];
 	}
 
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	protected Session getSession(){
+	protected Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
 
@@ -40,7 +46,7 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 		getSession().delete(entity);
 	}
 
-	protected Criteria createEntityCriteria(){
+	protected Criteria createEntityCriteria() {
 		return getSession().createCriteria(persistentClass);
 	}
 
