@@ -1,32 +1,41 @@
 package org.hrSolution.model;
 
-import java.io.Serializable;
+<<<<<<< HEAD
+=======
+//import java.io.Serializable;
 
+>>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
-
 /**
- *  This class used for getter setter of Company Department with having
- *  department Name and ID
- *  We have used Builder Design Pattern for setting up variables
- *  
- *  @author  Abhimanyu Baranwal
- *  @since   14-10-2016 
+ * This class used for getter setter of Company Department with having
+ * department Name and ID We have used Builder Design Pattern for setting up
+ * variables
+ * 
+ * @author Abhimanyu Baranwal
+ * @since 14-10-2016
  */
 
 @Entity
 @Table(name = "DEPARTMENT")
-public class CompanyDepartmentModel implements Serializable{
+<<<<<<< HEAD
+public class CompanyDepartmentModel {
+=======
+public class CompanyDepartmentModel/* implements Serializable*/{
+>>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+<<<<<<< HEAD
+	// private static final long serialVersionUID = 1L;
+=======
+	//private static final long serialVersionUID = 1L;
+>>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 
 	/**
 	 * Company ID
@@ -48,11 +57,10 @@ public class CompanyDepartmentModel implements Serializable{
 	@JsonProperty("cdname")
 	private String companyDepartmentName;
 
-
 	public CompanyDepartmentModel() {
 		super();
-		// TODO Auto-generated constructor stub
-	}	
+
+	}
 
 	/**
 	 * Parameterized Constructor
@@ -83,7 +91,7 @@ public class CompanyDepartmentModel implements Serializable{
 	public Integer getcompanyID() {
 		return companyID;
 	}
-	
+
 	/**
 	 * Builder class for CompanyDepartmentModel
 	 */

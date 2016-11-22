@@ -6,21 +6,18 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
-
 /**
- *  This class used for getter setter of Company Role with access
- *  rights of Each Department.
- *  We have used Builder Design Pattern for setting up variables
- *  
- *  @author  Abhimanyu Baranwal
- *  @since   14-10-2016 
+ * This class used for getter setter of Company Role with access rights of Each
+ * Department. We have used Builder Design Pattern for setting up variables
+ * 
+ * @author Abhimanyu Baranwal
+ * @since 14-10-2016
  */
 
 @Entity
 @Table(name = "ROLE")
 public class CompanyRoleModel {
-	
+
 	/**
 	 * Role ID of employee @generated
 	 */
@@ -35,7 +32,7 @@ public class CompanyRoleModel {
 	private String roleName;
 
 	/**
-	 *  Access Rights
+	 * Access Rights
 	 */
 	@JsonProperty("rights")
 	private String accessRights;
@@ -44,8 +41,7 @@ public class CompanyRoleModel {
 	 * Parameterized Constructor
 	 */
 
-	
-	public CompanyRoleModel () {
+	public CompanyRoleModel() {
 		super();
 	}
 
@@ -127,6 +123,11 @@ public class CompanyRoleModel {
 		 * Build Method
 		 */
 		public CompanyRoleModel build() {
+<<<<<<< HEAD
+
+=======
+		
+>>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 			return new CompanyRoleModel(this);
 		}
 	}

@@ -7,5 +7,5 @@ import org.hrSolution.model.CompanyDepartmentModel;
  * */
 public interface CompanyDepartmentDao {
 
-	void saveDepartment(CompanyDepartmentModel compDeptModel);
+		void saveDepartment(CompanyDepartmentModel compDeptModel);
 }
