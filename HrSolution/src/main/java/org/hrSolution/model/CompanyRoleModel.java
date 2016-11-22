@@ -127,6 +127,7 @@ public class CompanyRoleModel {
 		 * Build Method
 		 */
 		public CompanyRoleModel build() {
+		
 			return new CompanyRoleModel(this);
 		}
 	}
