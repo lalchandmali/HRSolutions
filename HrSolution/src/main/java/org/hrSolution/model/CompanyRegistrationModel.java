@@ -1,6 +1,16 @@
 package org.hrSolution.model;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * This model class is used for setting and getting variable for Company
@@ -8,11 +18,22 @@ import org.codehaus.jackson.annotate.JsonProperty;
  * @author Vamsi Ram Obillaneni
  * 
  */
+@Entity
+@Table(name = "COMPANY")
 public class CompanyRegistrationModel {
 
 	/*
 	 * We are following Builder Design Pattern to create the below Model Object
 	 */
+
+	/**
+	 * The Id of the Company
+	 */
+	@Id
+	@GenericGenerator(name = "comp", strategy = "increment")
+	@GeneratedValue(generator = "comp")
+	@JsonProperty("cId")
+	private Long companyId;
 
 	/**
 	 * The Name of the Company
@@ -48,7 +69,13 @@ public class CompanyRegistrationModel {
 	 * The address of the Company
 	 */
 	@JsonProperty("addr")
-	private Address companyAddress;
+	@OneToOne(cascade = CascadeType.ALL)
+	@PrimaryKeyJoinColumn
+	private CompanyAddress companyAddress;
+
+	public CompanyRegistrationModel() {
+		super();
+	}
 
 	/**
 	 * Constructor
@@ -62,6 +89,17 @@ public class CompanyRegistrationModel {
 		this.companyEmail = companyRegistrationModelBuilder.companyEmail;
 		this.companyPhone = companyRegistrationModelBuilder.companyPhone;
 		this.companyCEO = companyRegistrationModelBuilder.companyCEO;
+	}
+
+	/**
+	 * Gets the {@link Long} instance representing
+	 * {@link CompanyRegistrationModel#companyId}
+	 * 
+	 * @return The {@link Long} instance representing
+	 *         {@link CompanyRegistrationModel#companyId}
+	 */
+	public Long getCompanyId() {
+		return companyId;
 	}
 
 	/**
@@ -120,17 +158,23 @@ public class CompanyRegistrationModel {
 	}
 
 	/**
-	 * Gets the {@link Address} instance representing
+	 * Gets the {@link CompanyAddress} instance representing
 	 * {@link CompanyRegistrationModel#companyAddress}
 	 * 
 	 * @return The {@link String} instance representing
 	 *         {@link CompanyRegistrationModel#companyAddress}
 	 */
-	public Address getCompanyAddress() {
+	public CompanyAddress getCompanyAddress() {
 		return companyAddress;
 	}
 
 	public static class CompanyRegistrationModelBuilder {
+
+		/**
+		 * The Id of the Company
+		 */
+		@JsonProperty("cId")
+		private Long companyId;
 
 		/**
 		 * The Name of the Company
@@ -166,7 +210,21 @@ public class CompanyRegistrationModel {
 		 * The address of the Company
 		 */
 		@JsonProperty("addr")
-		private Address companyAddress;
+		private CompanyAddress companyAddress;
+
+		/**
+		 * Sets the {@link Long} instance representing
+		 * {@link CompanyRegistrationModelBuilder#companyId}
+		 * 
+		 * @Param The {@link Long} instance representing
+		 *        {@link CompanyRegistrationModelBuilder#companyId}
+		 * @return The {@link CompanyRegistrationModelBuilder} instance
+		 *         representing {@link CompanyRegistrationModelBuilder}
+		 */
+		public CompanyRegistrationModelBuilder setCompanyId(Long companyId) {
+			this.companyId = companyId;
+			return this;
+		}
 
 		/**
 		 * Sets the {@link String} instance representing
@@ -239,7 +297,7 @@ public class CompanyRegistrationModel {
 		}
 
 		/**
-		 * Sets the {@link Address} instance representing
+		 * Sets the {@link CompanyAddress} instance representing
 		 * {@link CompanyRegistrationModelBuilder#companyAddress}
 		 * 
 		 * @Param The {@link String} instance representing
@@ -247,7 +305,7 @@ public class CompanyRegistrationModel {
 		 * @return The {@link CompanyRegistrationModelBuilder} instance
 		 *         representing {@link CompanyRegistrationModelBuilder}
 		 */
-		public CompanyRegistrationModelBuilder setCompanyAddress(Address companyAddress) {
+		public CompanyRegistrationModelBuilder setCompanyAddress(CompanyAddress companyAddress) {
 			this.companyAddress = companyAddress;
 			return this;
 		}

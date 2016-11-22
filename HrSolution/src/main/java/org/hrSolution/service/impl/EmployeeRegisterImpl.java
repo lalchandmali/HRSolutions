@@ -1,5 +1,7 @@
 package org.hrSolution.service.impl;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.hrSolution.dao.EmployeeRegisterDao;
 import org.hrSolution.model.EmployeeRegistrationModel;
 import org.hrSolution.service.EmployeeRegisterService;
@@ -14,6 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Service("employeeRegisterService")
 @Transactional
 public class EmployeeRegisterImpl implements EmployeeRegisterService {
+	private static final Logger logger = LogManager
+			.getLogger(EmployeeRegisterImpl.class);
 
 	@Autowired
 	EmployeeRegisterDao employeeRegisterDao;
@@ -24,7 +28,12 @@ public class EmployeeRegisterImpl implements EmployeeRegisterService {
 	 * 
 	 * */
 	public Boolean register(EmployeeRegistrationModel employeeRegistrationModel) {
-		employeeRegisterDao.saveEmployee(employeeRegistrationModel);
+		try {
+			employeeRegisterDao.saveEmployee(employeeRegistrationModel);
+		} catch (Exception exception) {
+			logger.debug("Exception occured " + exception);
+			return false;
+		}
 
 		return true;
 	}
