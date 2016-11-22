@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.google.gson.Gson;
 
 /**
-<<<<<<< HEAD
  * Repository are the DAOs(Data Access Objects), they access the database
  * directly.
  */
@@ -39,39 +38,11 @@ public class CompanyRoleDaoImpl extends AbstractDao<Integer, CompanyRoleModel> i
 			/**
 			 * Converting object into String using JSOn Api
 			 */
-=======
- * Repository are the DAOs(Data Access Objects), they access the database directly.
- * */
-@Repository("compRoleDao")
-@Transactional
-public class CompanyRoleDaoImpl extends AbstractDao<Integer, CompanyRoleModel> implements CompanyRoleDao{
-	
-	private static final Logger logger = LogManager
-			.getLogger(EmployeeRegisterDaoImpl.class);
-	/**
-	 * Creating Object of RedisTemplate
-	 * */
-	@Autowired
-	RedisService redisService;
-	
-	public void addRole(CompanyRoleModel compRoleModel) {
-		
-		
-		try {
-			/**
-			 * Storing Employee Registration Data into Database
-			 * */
-			persist(compRoleModel);
-			/**
-			 * Converting object into String using JSOn Api
-			 * */
->>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 			Gson gson = new Gson();
 			String emp = gson.toJson(compRoleModel);
 
 			/**
 			 * Saving registration object into Redis cache server
-<<<<<<< HEAD
 			 */
 			redisService.setValue(RedisTemplateConstant.ROLE_KEY, compRoleModel.getRoleId().toString(), emp);
 			/**
@@ -80,30 +51,12 @@ public class CompanyRoleDaoImpl extends AbstractDao<Integer, CompanyRoleModel> i
 			Object obj = redisService.getValue(RedisTemplateConstant.ROLE_KEY, compRoleModel.getRoleId().toString());
 
 			CompanyRoleModel object = gson.fromJson(obj.toString(), CompanyRoleModel.class);
-=======
-			 * */
-			redisService.setValue(RedisTemplateConstant.ROLE_KEY,
-					compRoleModel.getRoleId().toString(), emp);
-			/**
-			 * getting value from redis cache
-			 * */
-			Object obj = redisService.getValue(
-					RedisTemplateConstant.ROLE_KEY,
-					compRoleModel.getRoleId().toString());
-
-			CompanyRoleModel object = gson.fromJson(obj.toString(),
-					CompanyRoleModel.class);
->>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 
 			System.out.println(object.getRoleName());
 		} catch (Exception exception) {
 			logger.debug("Exception occured " + exception.getMessage());
 		}
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 	}
 
 }

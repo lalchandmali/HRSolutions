@@ -29,16 +29,7 @@ public class CompanyDepartmentDaoImpl extends AbstractDao<Integer, CompanyDepart
 	@Autowired
 	RedisService redisService;
 
-	private static final Logger logger = LogManager
-			.getLogger(EmployeeRegisterDaoImpl.class);
-	/**
-	 * Creating Object of RedisTemplate
-	 * */
-	@Autowired
-	RedisService redisService;
-	
 	public void saveDepartment(CompanyDepartmentModel compDeptModel) {
-<<<<<<< HEAD
 		/* persist(compDeptModel); */
 
 		try {
@@ -49,24 +40,11 @@ public class CompanyDepartmentDaoImpl extends AbstractDao<Integer, CompanyDepart
 			/**
 			 * Converting object into String using JSOn Api
 			 */
-=======
-		/*persist(compDeptModel);*/
-		
-		try {
-			/**
-			 * Storing Employee Registration Data into Database
-			 * */
-			persist(compDeptModel);
-			/**
-			 * Converting object into String using JSOn Api
-			 * */
->>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 			Gson gson = new Gson();
 			String emp = gson.toJson(compDeptModel);
 
 			/**
 			 * Saving registration object into Redis cache server
-<<<<<<< HEAD
 			 */
 			redisService.setValue(RedisTemplateConstant.COMPANYDEPARTMENT_KEY, compDeptModel.getcompanyID().toString(),
 					emp);
@@ -77,30 +55,12 @@ public class CompanyDepartmentDaoImpl extends AbstractDao<Integer, CompanyDepart
 					compDeptModel.getcompanyID().toString());
 
 			CompanyDepartmentModel object = gson.fromJson(obj.toString(), CompanyDepartmentModel.class);
-=======
-			 * */
-			redisService.setValue(RedisTemplateConstant.COMPANYDEPARTMENT_KEY,
-					compDeptModel.getcompanyID(), emp);
-			/**
-			 * getting value from redis cache
-			 * */
-			Object obj = redisService.getValue(
-					RedisTemplateConstant.COMPANYDEPARTMENT_KEY,
-					compDeptModel.getcompanyID());
-
-			CompanyDepartmentModel object = gson.fromJson(obj.toString(),
-					CompanyDepartmentModel.class);
->>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 
 			System.out.println(object.getCompanyDepartmentName());
 		} catch (Exception exception) {
 			logger.debug("Exception occured " + exception.getMessage());
 		}
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 	}
 
 }

@@ -123,11 +123,7 @@ public class CompanyRoleModel {
 		 * Build Method
 		 */
 		public CompanyRoleModel build() {
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 			return new CompanyRoleModel(this);
 		}
 	}

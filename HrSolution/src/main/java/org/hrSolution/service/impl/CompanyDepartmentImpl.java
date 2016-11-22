@@ -8,13 +8,6 @@ import org.hrSolution.service.CompanyDepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-
-/**
- * @author Abhimanyu Baranwal
- *
- */
 
 /**
  * @author Abhimanyu Baranwal
@@ -27,10 +20,6 @@ public class CompanyDepartmentImpl implements CompanyDepartmentService {
 
 	private static final Logger logger = LogManager.getLogger(CompanyDepartmentImpl.class);
 
-	private static final Logger logger = LogManager
-			.getLogger(CompanyDepartmentImpl.class);
-
-	
 	@Autowired
 	CompanyDepartmentDao compDeptDao;
 
@@ -40,12 +29,7 @@ public class CompanyDepartmentImpl implements CompanyDepartmentService {
 	 * 
 	 **/
 	public Boolean addDepartment(CompanyDepartmentModel compDeptModel) {
-<<<<<<< HEAD
 
-=======
-		
-		
->>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 		try {
 			compDeptDao.saveDepartment(compDeptModel);
 		} catch (Exception exception) {
@@ -53,10 +37,6 @@ public class CompanyDepartmentImpl implements CompanyDepartmentService {
 			return false;
 		}
 
-<<<<<<< HEAD
-=======
-		
->>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 		return true;
 	}
 

@@ -1,10 +1,5 @@
 package org.hrSolution.model;
 
-<<<<<<< HEAD
-=======
-//import java.io.Serializable;
-
->>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -22,20 +17,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "DEPARTMENT")
-<<<<<<< HEAD
 public class CompanyDepartmentModel {
-=======
-public class CompanyDepartmentModel/* implements Serializable*/{
->>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 
 	/**
 	 * 
 	 */
-<<<<<<< HEAD
 	// private static final long serialVersionUID = 1L;
-=======
-	//private static final long serialVersionUID = 1L;
->>>>>>> 78bc347a4a65a3cfdf42343904bba89092767193
 
 	/**
 	 * Company ID
