@@ -1,4 +1,4 @@
-package org.hrSolution.impl;
+package org.hrSolution.service.impl;
 
 import org.hrSolution.dao.CompanyRegistrationDao;
 import org.hrSolution.model.CompanyAddress;
