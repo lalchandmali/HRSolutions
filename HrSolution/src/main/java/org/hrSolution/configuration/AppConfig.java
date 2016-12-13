@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.hrSolution")
+@ComponentScan(basePackages = "org.hrSolution")
 /**
  * This class is used for configuration of resources and view Resolver
  * 
