@@ -1,6 +1,6 @@
 package org.hrSolution.model;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** This model class is used for setting and getting variable for
  * preEmployment means Employee has not joined the company
@@ -13,7 +13,11 @@ public class PreEmployeeRegistrationModel {
 	/**
 	 * class attributes declaration
 	 */
-
+	/**
+	 * PreEmployee Company Name
+	 * */
+	@JsonProperty("cmpName")
+	private String preCompanyName;
 	/**
 	 * preEmployee name variable declaration
 	 */
@@ -39,11 +43,16 @@ public class PreEmployeeRegistrationModel {
 	private String preEmpPassword;
 
 	/** Parameterized constructor for setting attributes values */
-	public PreEmployeeRegistrationModel(PreEmployeeRegistrationBuilder preEmployeeRegistrationBuilder) {
+	public PreEmployeeRegistrationModel(
+			PreEmployeeRegistrationBuilder preEmployeeRegistrationBuilder) {
 		this.preEmpName = preEmployeeRegistrationBuilder.preEmpName;
 		this.preEmpMail = preEmployeeRegistrationBuilder.preEmpMail;
 		this.preEmpPhone = preEmployeeRegistrationBuilder.preEmpPhone;
 		this.preEmpPassword = preEmployeeRegistrationBuilder.preEmpPassword;
+	}
+
+	public String getPreCompanyName() {
+		return preCompanyName;
 	}
 
 	/** Getting Employee name */
@@ -71,7 +80,11 @@ public class PreEmployeeRegistrationModel {
 		/**
 		 * class attributes declaration
 		 */
-
+		/**
+		 * PreEmployee Company Name
+		 * */
+		@JsonProperty("cmpName")
+		private String preCompanyName;
 		/**
 		 * preEmployee name variable declaration
 		 */
@@ -115,8 +128,16 @@ public class PreEmployeeRegistrationModel {
 		}
 
 		/** Setting Employee password by Builder */
-		public PreEmployeeRegistrationBuilder preEmpPassword(String preEmpPassword) {
+		public PreEmployeeRegistrationBuilder preEmpPassword(
+				String preEmpPassword) {
 			this.preEmpPassword = preEmpPassword;
+			return this;
+		}
+
+		/** Setting Employee password by Builder */
+		public PreEmployeeRegistrationBuilder preCompanyName(
+				String preCompanyName) {
+			this.preCompanyName = preCompanyName;
 			return this;
 		}
 
