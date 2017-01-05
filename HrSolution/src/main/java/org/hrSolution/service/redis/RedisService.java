@@ -11,13 +11,13 @@ public class RedisService {
 	@Autowired
 	public RedisTemplate<String, Object> template;
 
-	public Object getValue(final String hashValue,final String key) {
-		return template.opsForHash().get(hashValue,key);
+	public Object getValue(final String key) {
+		return template.opsForValue().get(key);
 	}
 
-	public void setValue(final String hashValue,final String key, Object object) {
-		template.opsForHash().put(hashValue,key, object.toString());
+	public void setValue(final String key, Object object) {
+		template.opsForValue().set(key, object.toString());
 		// set a expire for a message
-		template.expire(key, 24*60*60, TimeUnit.SECONDS);
+		template.expire(key, 5, TimeUnit.SECONDS);
 	}
 }
